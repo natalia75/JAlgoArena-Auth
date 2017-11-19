@@ -25,6 +25,23 @@ description = """JAlgoArena Auth Server"""
 sourceCompatibility = 1.8
 
 repositories {
+  jcenter()
+}
+
+dependencies {
+    compile "io.springfox:springfox-swagger2:2.7.0"
+    compile "io.springfox:springfox-swagger-ui:2.7.0"
+}
+
+repositories {
+   maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+}
+
+dependencies {
+    compile "io.springfox:springfox-swagger2:2.7.1-SNAPSHOT"
+}
+
+repositories {
     mavenCentral()
 }
 
