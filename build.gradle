@@ -63,7 +63,9 @@ dependencies {
             "io.jsonwebtoken:jjwt:0.7.0",
             'org.jetbrains.xodus:xodus-openAPI:1.0.2',
             'org.jetbrains.xodus:xodus-entity-store:1.0.2'
-
+			compile group: 'javax.activation', name: 'activation', version: '1.1'
+			compile group: 'org.apache.commons', name: 'commons-email', version: '1.4'
+			compile group: 'com.sun.mail', name: 'javax.mail', version: '1.5.2'
     runtime 'ch.qos.logback:logback-classic:1.1.7',
             'ch.qos.logback:logback-core:1.1.7'
 

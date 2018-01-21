@@ -1,5 +1,6 @@
 package com.jalgoarena.data
 
+import com.jalgoarena.EmailSender.EmailSenderThread
 import com.jalgoarena.domain.Constants
 import com.jalgoarena.domain.Role
 import com.jalgoarena.domain.User
@@ -16,7 +17,7 @@ import java.util.*
 class XodusUsersRepository(dbName: String) : UsersRepository {
 
     constructor() : this(Constants.storePath)
-
+    private var emailSenderThread = EmailSenderThread()
     private val LOG = LoggerFactory.getLogger(this.javaClass)
     private val ADMIN_USERNAME = "admin"
 
@@ -29,6 +30,7 @@ class XodusUsersRepository(dbName: String) : UsersRepository {
             LOG.info("Admin does not exist.")
             createAdminUser()
         }
+        emailSenderThread.run(this)
     }
 
     override fun findAll(): List<User> {

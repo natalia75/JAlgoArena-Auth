@@ -26,9 +26,9 @@ fun main(args: Array<String>) {
     SpringApplication.run(JAlgoArenaAuthServer::class.java, *args)
 }
 
-@Bean
+@Bean                 
 fun api(): Docket = Docket(DocumentationType.SWAGGER_2)
-        .select() 
+        .select()     
         .apis(RequestHandlerSelectors.basePackage("com.jalgoarena.web"))
-        .paths(PathSelectors.any())                          
-        .build()
+        .paths(PathSelectors.any())
+        .build()      
